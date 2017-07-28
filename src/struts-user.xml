@@ -7,17 +7,17 @@
 
 	<!-- Configure NameSpace for action web -->
 	<package name="User" namespace="/user" extends="default-web">
-		<action name="findByUserId*" class="springUserAction" method="findByUserId">
+		<action name="findByUserId*" class="framgiavn.project01.web.action.UserAction" method="findByUserId">
 			<param name="user.user_id">{1}</param>
-			<result name="success">User.Info</result>
-			<result name="input">User.Info</result>
-			<result name="error">User.Info</result>
+			<result name="success">user_info.jsp</result>
+			<result name="input">user_info.jsp</result>
+			<result name="error">user_info.jsp</result>
 		</action>
 
-		<action name="findByUsername*" class="springUserAction" method="findByUsername">
+		<action name="findByUsername*" class="framgiavn.project01.web.action.UserAction" method="findByUsername">
 			<param name="user.username">{1}</param>
-			<result name="success">User.Info</result>
-			<result name="error">User.Info</result>
+			<result name="success">user_info.jsp</result>
+			<result name="error">user_info.jsp</result>
 		</action>
 	</package>
 </struts>

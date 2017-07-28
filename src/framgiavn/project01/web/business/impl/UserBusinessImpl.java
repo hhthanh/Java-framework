@@ -16,7 +16,6 @@ public class UserBusinessImpl implements UserBusiness {
 		this.userDAO = userDAO;
 	}
 
-	@Override
 	public User findByUserId(Integer user_id) throws Exception {
 		try {
 			return getUserDAO().findByUserId(user_id);
@@ -26,7 +25,6 @@ public class UserBusinessImpl implements UserBusiness {
 		}
 	}
 
-	@Override
 	public User findByUsername(String username) throws Exception {
 		try {
 			return getUserDAO().findByUsername(username);

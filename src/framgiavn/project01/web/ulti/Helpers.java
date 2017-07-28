@@ -19,6 +19,8 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+
 /**
  * Helpers class, which contains static methods helper methods like loading the
  * given property file etc.
@@ -36,7 +38,7 @@ public final class Helpers {
 	private Helpers() {
 		;
 	}
-
+	
 	/**
 	 * Loads the given property file by searching the CLASSPATH or
 	 * java.class.path system property value and returns the Properties object.
@@ -55,7 +57,9 @@ public final class Helpers {
 
 		InputStream is = null;
 		try {
-			String configPath = System.getProperty("configPath");
+			//Old project using configPath variable to declare resource folder
+			//But since we use fixed path, this variable become null
+			String configPath = "E:/Study/JavaWebCode/Java-framework/resources"; //System.getProperty("configPath");
 			File file = new File(configPath + File.separator + propertyFileName);
 			System.out
 					.println("####################################################### "

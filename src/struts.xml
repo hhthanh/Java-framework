@@ -25,7 +25,7 @@
 				exception="java.lang.RuntimeException" />
 		</global-exception-mappings>
 
-		<action name="" class="springUserAction" method="homePage">
+		<action name="" class="framgiavn.project01.web.action.UserAction" method="homePage">
 			<result>HomePage</result>
 		</action>
 
