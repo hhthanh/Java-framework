@@ -13,23 +13,20 @@ public class UserDAOImpl implements UserDAO {
 	private static final Logit2 log = Logit2.getInstance(UserDAOImpl.class);
 	public static final String NAME = "customerName";
 	private SessionFactory sessionFactory;
+	
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
-	}
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
 	}
 
 	protected void initDAO() {
 		// Do nothing
 	}
 	
-	public User findByUserId(Integer user_id) throws Exception {
+	public User findByUserId(Integer user_id){
 		return findByUserId(user_id, false);
 	}
 
-	public User findByUserId(Integer user_id, boolean lock) throws Exception {
+	public User findByUserId(Integer user_id, boolean lock) {
 		try {
 			Query<User> query = sessionFactory.getCurrentSession().getNamedQuery("User.SelectUserByUserId");
 			if (lock)
@@ -38,11 +35,11 @@ public class UserDAOImpl implements UserDAO {
 			return (User) query.uniqueResult();
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
-			throw re;
+			return null;
 		}
 	}
 
-	public User findByUsername(String username) throws Exception {
+	public User findByUsername(String username) {
 		// TODO Auto-generated method stub
 		return null;
 	}

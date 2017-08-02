@@ -12,10 +12,6 @@ public class UserBusinessImpl implements UserBusiness {
 		return userDAO;
 	}
 
-	public void setUserDAO(UserDAO userDAO) {
-		this.userDAO = userDAO;
-	}
-
 	public User findByUserId(Integer user_id) throws Exception {
 		try {
 			return getUserDAO().findByUserId(user_id);

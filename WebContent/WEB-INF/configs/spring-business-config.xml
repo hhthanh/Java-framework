@@ -9,8 +9,7 @@
 
 	<bean id="UserBusiness" parent="transactionProxyTemplate">
 		<property name="target">
-			<bean class="framgiavn.project01.web.business.impl.UserBusinessImpl">
-				<property name="userDAO" ref="UserDAO" />
+			<bean class="framgiavn.project01.web.business.impl.UserBusinessImpl" autowire="byName">
 			</bean>
 		</property>
 	</bean>

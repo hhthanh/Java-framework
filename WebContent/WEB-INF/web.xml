@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
@@ -38,7 +39,7 @@
 		<param-value>WEB-INF/configs/spring-*-config.xml</param-value>
 	</context-param>
 	<context-param>
-		<param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+		<param-name>org.apache.tiles.definition.DefinitionsFactory.DEFINITIONS_CONFIG</param-name>
 		<param-value>
         	/WEB-INF/configs/tiles-defs-default.xml
         	,/WEB-INF/configs/tiles-defs-user.xml
@@ -46,13 +47,14 @@
 	</context-param>
 	<!-- Define Tiles configuration files -->
 	<!-- Define Tiles 2 Listener -->
+    <listener>
+        <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+    </listener>
 	<!-- Define Listener for Spring -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<listener>
-		<listener-class>org.apache.tiles.web.startup.simple.SimpleTilesListener</listener-class>
-	</listener>
+	
 	<!-- Define Spring Security Listener -->
 	<listener>
 		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>

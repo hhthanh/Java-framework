@@ -1,8 +1,9 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,28 +16,28 @@
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="expires" content="0" />
-<tiles:useAttribute id="list" name="default-css"
+<tilesx:useAttribute id="list" name="default-css"
 	classname="java.util.List" />
 <c:forEach var="item" items="${list}">
 	<link rel="stylesheet" href="<c:url value='${item}'/>" type="text/css"
 		media="screen" />
 </c:forEach>
 <%-- Addition CSS --%>
-<tiles:useAttribute id="list" name="css" classname="java.util.List" />
+<tilesx:useAttribute id="list" name="css" classname="java.util.List" />
 <c:forEach var="item" items="${list}">
 	<link rel="stylesheet" href="<c:url value='${item}'/>" type="text/css"
 		media="screen" />
 </c:forEach>
 
 <%-- Default JS --%>
-<tiles:useAttribute id="list" name="default-js"
+<tilesx:useAttribute id="list" name="default-js"
 	classname="java.util.List" />
 <c:forEach var="item" items="${list}">
 	<script src="<c:url value='${item}'/>" type="text/javascript"></script>
 </c:forEach>
 
 <%-- Addition JS --%>
-<tiles:useAttribute id="list" name="js" classname="java.util.List" />
+<tilesx:useAttribute id="list" name="js" classname="java.util.List" />
 <c:forEach var="item" items="${list}">
 	<script src="<c:url value='${item}'/>" type="text/javascript"></script>
 </c:forEach>

@@ -57,9 +57,8 @@ public final class Helpers {
 
 		InputStream is = null;
 		try {
-			//Old project using configPath variable to declare resource folder
-			//But since we use fixed path, this variable become null
-			String configPath = "E:/Study/JavaWebCode/Java-framework/resources"; //System.getProperty("configPath");
+			String configPath = System.getProperty("configPath");
+			System.out.println(configPath);
 			File file = new File(configPath + File.separator + propertyFileName);
 			System.out
 					.println("####################################################### "
